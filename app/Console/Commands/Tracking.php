@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Models\Device;
 
 class Tracking extends Command
 {
@@ -11,14 +12,14 @@ class Tracking extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'track';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Query devices and corresponding reports from the database and dumps them to the screen';
 
     /**
      * Create a new command instance.
@@ -37,6 +38,9 @@ class Tracking extends Command
      */
     public function handle()
     {
-        return 0;
+        $output = Device::with('reports')
+            ->get()
+            ->toArray();
+        dd($output);
     }
 }
