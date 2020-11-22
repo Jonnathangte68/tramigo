@@ -14,9 +14,23 @@ Steps completed so far:
 
 ## Instalation instructions
 
-     * configure .env
-     * run `composer install` or `composer update` in the project directory
-     * run command `php artisan track`
+* configure .env
+* run `composer install` or `composer update` in the project directory
+* run command `php artisan track`
+
+`.env E.g:`
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tramigo_main_development
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+NOTE: For security reasons, it is probably better to create a user for that particular
+database and then grant all of the permissions on that database for that user. I leave it as it is for test purposes.
 
 ## Example "dump and die" result show after executing track command
 
