@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Models\Device;
 
 class Tracking extends Command
 {
@@ -37,6 +38,9 @@ class Tracking extends Command
      */
     public function handle()
     {
-        dd("success, track command works");
+        $output = Device::with('reports')
+            ->get()
+            ->toArray();
+        dd($output);
     }
 }
