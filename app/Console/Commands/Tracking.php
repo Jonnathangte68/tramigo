@@ -11,14 +11,14 @@ class Tracking extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'track';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Query devices and corresponding reports from the database and dumps them to the screen';
 
     /**
      * Create a new command instance.
@@ -37,6 +37,6 @@ class Tracking extends Command
      */
     public function handle()
     {
-        return 0;
+        dd("success, track command works");
     }
 }
